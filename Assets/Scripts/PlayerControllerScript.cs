@@ -30,7 +30,7 @@ public class PlayerControllerScript : Photon.MonoBehaviour {
 		var clazz = new BlutSauger();
 		Abilities [0] = new ActiveAbility (3, clazz.SoulRip, "Deal 2 damage in a cone in front of you, stealing it to yourself");
 		Abilities [1] = new ActiveAbility (3, clazz.BlutSauge, "Deal 2 damage in an area around you, stealing it to nearby players");
-		Abilities [2] = new ActiveAbility (6, clazz.BlutCleave, "Deal 3 damage in a 90 arc around you, slowing enemies by 15%");
+		Abilities [2] = new ActiveAbility (6, clazz.BlutCleave, "Deal 3 damage in a 90 arc around you, slowing enemies by 15% for 3 seconds");
 	}
 	void Update () {
 		GetComponent<HealthScript>().OnDeath = OnDeath;
@@ -71,7 +71,7 @@ public class PlayerControllerScript : Photon.MonoBehaviour {
 				velocity.x += Speed * (sprinting ? 1.7f : 1f);
 			}
 			velocity /= 4;
-			rigidbody2D.AddRelativeForce (velocity * 10000);
+			rigidbody2D.AddRelativeForce (velocity * 10000 * GetComponent<BuffListScript>().GetMoveSpeedMultiplier());
 			var cam = GetComponentInChildren<Camera> ();
 			transform.Rotate(0, 0, Input.GetAxis("Mouse X") * -11);
 			target.Translate(0, Input.GetAxis("Mouse Y") * 0.32f, 0);

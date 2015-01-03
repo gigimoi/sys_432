@@ -77,7 +77,7 @@ public class ZombieAI : Photon.MonoBehaviour {
 		//Direction to the next waypoint
 		Vector3 dir = (path.vectorPath[currentWaypoint]-transform.position).normalized;
 		dir *= speed * Time.fixedDeltaTime;
-		rigidbody2D.AddForce (dir * 150);
+		rigidbody2D.AddForce (dir * 150 * GetComponent<BuffListScript>().GetMoveSpeedMultiplier());
 		if (Vector3.Distance (transform.position,path.vectorPath[currentWaypoint]) < nextWaypointDistance) {
 			currentWaypoint++;
 			return;
