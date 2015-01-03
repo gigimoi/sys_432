@@ -28,8 +28,8 @@ public class PlayerControllerScript : Photon.MonoBehaviour {
 		text = GameObject.Find ("/UI/Canvas/TopLeftPanel/TopLeftText").transform;
 
 		var clazz = new BlutSauger();
-		Abilities [0] = new ActiveAbility (3, clazz.SoulRip);
-		Abilities [1] = new ActiveAbility (3, clazz.BlutSauge);
+		Abilities [0] = new ActiveAbility (3, clazz.SoulRip, "Deal 2 damage in a cone in front of you, stealing it to yourself");
+		Abilities [1] = new ActiveAbility (3, clazz.BlutSauge, "Deal 2 damage in an area around you, stealing it to nearby players");
 	}
 	void Update () {
 		GetComponent<HealthScript>().OnDeath = OnDeath;

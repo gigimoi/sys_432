@@ -6,12 +6,13 @@ public class ActiveAbility : Ability {
 	public float Cooldown;
 	public float CurrentCooldown;
 	OnCast onCast;
-	public ActiveAbility (float cooldown, OnCast onCast) {
+	public ActiveAbility (float cooldown, OnCast onCast, string info) : base(info) {
 		Cooldown = cooldown;
 		CurrentCooldown = 0;
 		this.onCast = onCast;
 	}
 	public override void Update(PlayerControllerScript player) {
+		base.Update (player);
 		if (CurrentCooldown <= 0) {
 			SetIconState(player, IconState.None);
 			if (Input.GetKey (this.GetKey (player))) {

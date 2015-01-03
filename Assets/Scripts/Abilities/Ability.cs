@@ -5,10 +5,17 @@ using UnityEngine.UI;
 public enum IconState { None, Passive, Active, Cooldown }
 public class Ability {
 	private AbilitiesScript abil;
-	public Ability() {
+	public string Info;
+	public Ability(string info) {
+		this.Info = info;
 		abil = GameObject.Find ("/UI/Canvas/Abilities").GetComponent<AbilitiesScript> ();
 	}
 	public virtual void Update (PlayerControllerScript player) {
+		if(Input.GetKey(KeyCode.LeftShift)) {
+			abil.transform.GetChild(GetIndex(player)).GetChild (2).GetComponent<Text>().text = Info;
+		} else {
+			abil.transform.GetChild(GetIndex(player)).GetChild (2).GetComponent<Text>().text = "";
+		}
 	}
 	public void SetIconState(PlayerControllerScript player, IconState state) {
 		var icon = abil.transform.GetChild (GetIndex (player)).GetChild(0).GetComponent<Image>();
