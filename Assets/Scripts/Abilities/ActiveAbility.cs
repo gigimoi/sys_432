@@ -5,7 +5,7 @@ public class ActiveAbility : Ability {
 	public delegate void OnCast(PlayerControllerScript player);
 	public float Cooldown;
 	public float CurrentCooldown;
-	OnCast onCast;
+	protected OnCast onCast;
 	public ActiveAbility (float cooldown, OnCast onCast, string info) : base(info) {
 		Cooldown = cooldown;
 		CurrentCooldown = 0;
@@ -15,7 +15,7 @@ public class ActiveAbility : Ability {
 		base.Update (player);
 		if (CurrentCooldown <= 0) {
 			SetIconState(player, IconState.None);
-			if (Input.GetKey (this.GetKey (player))) {
+			if (Input.GetKeyDown (this.GetKey (player))) {
 				onCast(player);
 				CurrentCooldown = Cooldown;
 			}

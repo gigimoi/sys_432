@@ -31,7 +31,7 @@ public class PlayerControllerScript : Photon.MonoBehaviour {
 		Abilities [0] = new ActiveAbility (3, clazz.SoulRip, "Deal 2 damage in a cone in front of you, stealing it to yourself");
 		Abilities [1] = new ActiveAbility (3, clazz.BlutSauge, "Deal 2 damage in an area around you, stealing it to nearby players");
 		Abilities [2] = new ActiveAbility (7, clazz.BlutCleave, "Deal 3 damage in a 90 arc in front of you, slowing enemies by 15% for 3 seconds");
-		Abilities [3] = new ActiveAbility (7, clazz.BlutAura, "Toggleabe Aura around you that slows enemies at the cost of your life");
+		Abilities [3] = new ToggleAbility (clazz.BlutAuraOn, clazz.BlutAuraOff, "Toggleabe Aura around you that slows enemies at the cost of your life");
 	}
 	void Update () {
 		GetComponent<HealthScript>().OnDeath = OnDeath;

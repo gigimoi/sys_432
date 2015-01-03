@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class BlutAuraScript : Photon.MonoBehaviour {
 	static public Buff buff = new Buff() {
 		time = 0.5f,
-		moveSpeed = 0.4f
+		moveSpeed = 0.9f
 	};
 	private List<Transform> within = new List<Transform>();
 	void Start () {
