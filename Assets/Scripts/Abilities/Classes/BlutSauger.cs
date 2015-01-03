@@ -12,4 +12,9 @@ public class BlutSauger {
 		var cleave = PhotonNetwork.Instantiate ("Blut Sauge Cleave", player.transform.position, player.transform.rotation, 0);
 		cleave.GetPhotonView ().RPC ("SetPlayer", PhotonTargets.All, player.name);
 	}
+	public void BlutAura (PlayerControllerScript player)
+	{
+		var cleave = PhotonNetwork.Instantiate ("Blut Sauge Aura", player.transform.position, player.transform.rotation, 0);
+		cleave.GetPhotonView ().RPC ("SetPlayer", PhotonTargets.All, player.name);
+	}
 }
