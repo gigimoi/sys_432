@@ -11,7 +11,7 @@ public class Ability {
 		abil = GameObject.Find ("/UI/Canvas/Abilities").GetComponent<AbilitiesScript> ();
 	}
 	public virtual void Update (PlayerControllerScript player) {
-		if(Input.GetKey(KeyCode.LeftShift)) {
+		if(Input.GetKey(KeyCode.Tab)) {
 			abil.transform.GetChild(GetIndex(player)).GetChild (2).GetComponent<Text>().text = Info;
 		} else {
 			abil.transform.GetChild(GetIndex(player)).GetChild (2).GetComponent<Text>().text = "";
