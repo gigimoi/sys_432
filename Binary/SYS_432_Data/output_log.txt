@@ -1,0 +1,38 @@
+Initialize engine version: 4.6.0f3 (30840d631a27)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 470 (ID=0x6cd)
+    Vendor:   NVIDIA
+    VRAM:     1226 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Gavin\IdeaProjects\SYS_432\Binary\SYS_432_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Gavin\IdeaProjects\SYS_432\Binary\SYS_432_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Gavin\IdeaProjects\SYS_432\Binary\SYS_432_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Gavin\IdeaProjects\SYS_432\Binary\SYS_432_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Gavin\IdeaProjects\SYS_432\Binary\SYS_432_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Gavin\IdeaProjects\SYS_432\Binary\SYS_432_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Gavin\IdeaProjects\SYS_432\Binary\SYS_432_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Gavin\IdeaProjects\SYS_432\Binary\SYS_432_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Gavin\IdeaProjects\SYS_432\Binary\SYS_432_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading C:\Users\Gavin\IdeaProjects\SYS_432\Binary\SYS_432_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+Platform assembly: C:\Users\Gavin\IdeaProjects\SYS_432\Binary\SYS_432_Data\Managed\Pathfinding.Ionic.Zip.Reduced.dll (this message is harmless)
+Loading C:\Users\Gavin\IdeaProjects\SYS_432\Binary\SYS_432_Data\Managed\Pathfinding.Ionic.Zip.Reduced.dll into Unity Child Domain
+Platform assembly: C:\Users\Gavin\IdeaProjects\SYS_432\Binary\SYS_432_Data\Managed\Pathfinding.JsonFx.dll (this message is harmless)
+Loading C:\Users\Gavin\IdeaProjects\SYS_432\Binary\SYS_432_Data\Managed\Pathfinding.JsonFx.dll into Unity Child Domain
+- Completed reload, in  0.297 seconds
+desktop: 1280x768 60Hz; virtual: 1280x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: C:\Users\Gavin\IdeaProjects\SYS_432\Binary\SYS_432_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Gavin\IdeaProjects\SYS_432\Binary\SYS_432_Data\Managed\System.dll (this message is harmless)
+Scanning - Process took 560 ms to complete
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+AstarPath:AstarLog(String) (at C:\Users\Gavin\IdeaProjects\SYS_432\Assets\Plugins\AstarPathfindingProject\Core\AstarPath.cs:615)
+AstarPath:ScanLoop(OnScanStatus) (at C:\Users\Gavin\IdeaProjects\SYS_432\Assets\Plugins\AstarPathfindingProject\Core\AstarPath.cs:1874)
+AstarPath:Scan() (at C:\Users\Gavin\IdeaProjects\SYS_432\Assets\Plugins\AstarPathfindingProject\Core\AstarPath.cs:1733)
+AstarPath:Awake() (at C:\Users\Gavin\IdeaProjects\SYS_432\Assets\Plugins\AstarPathfindingProject\Core\AstarPath.cs:1322)
+ 
+(Filename: C Line: 0)
+
