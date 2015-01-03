@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class BlutAuraScript : Photon.MonoBehaviour {
-	public Buff buff = new Buff() {
+	static public Buff buff = new Buff() {
 		time = 0.5f,
 		moveSpeed = 0.4f
 	};
