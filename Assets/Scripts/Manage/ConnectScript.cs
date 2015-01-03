@@ -37,7 +37,7 @@ public class ConnectScript : Photon.MonoBehaviour {
 	}
 	void Update() {
 		if (PhotonNetwork.connectionState.ToString () != "Connected") {
-			text.GetComponent<Text> ().text = PhotonNetwork.connectionState.ToString () + "\n";
+			text.GetComponent<Text> ().text = PhotonNetwork.connectionStateDetailed.ToString () + "\n";
 		} else {
 			text.GetComponent<Text> ().text = "";
 		}
