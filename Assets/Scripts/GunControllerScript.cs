@@ -34,7 +34,7 @@ public class GunControllerScript : Photon.MonoBehaviour {
 			if (ticker > 0) {
 				ticker--;
 			}
-			if(!reloading && Input.GetKeyDown(KeyCode.R) && ammo > 0) {
+			if(!reloading && Input.GetKeyDown(KeyCode.R) && ammo > 0 && clip != MaxClip) {
 				photonView.RPC ("Reload", PhotonTargets.All, true);
 			}
 			text.GetComponent<Text>().text += "\nClip: " + clip + "\nAmmo: " + ammo;
