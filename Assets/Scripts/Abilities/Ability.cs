@@ -6,15 +6,17 @@ public enum IconState { None, Passive, Active, Cooldown }
 public class Ability {
 	private AbilitiesScript abil;
 	public string Info;
+	Text infoText;
 	public Ability(string info) {
 		this.Info = info;
+		infoText = abil.transform.GetChild (GetIndex (player)).GetChild (2).GetComponent<Text> ();
 		abil = GameObject.Find ("/UI/Canvas/Abilities").GetComponent<AbilitiesScript> ();
 	}
 	public virtual void Update (PlayerControllerScript player) {
 		if(Input.GetKey(KeyCode.LeftShift)) {
-			abil.transform.GetChild(GetIndex(player)).GetChild (2).GetComponent<Text>().text = Info;
+			infoText.text = Info;
 		} else {
-			abil.transform.GetChild(GetIndex(player)).GetChild (2).GetComponent<Text>().text = "";
+			infoText.text = "";
 		}
 	}
 	public void SetIconState(PlayerControllerScript player, IconState state) {
