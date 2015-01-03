@@ -29,6 +29,7 @@ public class PlayerControllerScript : Photon.MonoBehaviour {
 
 		var clazz = new BlutSauger();
 		Abilities [0] = new ActiveAbility (3, clazz.SoulRip);
+		Abilities [1] = new ActiveAbility (3, clazz.BlutSauge);
 	}
 	void Update () {
 		GetComponent<HealthScript>().OnDeath = OnDeath;
