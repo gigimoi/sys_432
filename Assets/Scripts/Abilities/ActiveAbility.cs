@@ -21,6 +21,11 @@ public class ActiveAbility : Ability {
 		} else {
 			CurrentCooldown -= 0.01f;
 			SetIconState(player, IconState.Cooldown);
+			if(CurrentCooldown <= 0) {
+				SetHelperText(player, "");
+			} else {
+				SetHelperText(player, "" + Mathf.Round(CurrentCooldown + 0.5f));
+			}
 		}
 	}
 }

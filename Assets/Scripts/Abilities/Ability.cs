@@ -9,8 +9,6 @@ public class Ability {
 		abil = GameObject.Find ("/UI/Canvas/Abilities").GetComponent<AbilitiesScript> ();
 	}
 	public virtual void Update (PlayerControllerScript player) {
-
-
 	}
 	public void SetIconState(PlayerControllerScript player, IconState state) {
 		var icon = abil.transform.GetChild (GetIndex (player)).GetChild(0).GetComponent<Image>();
@@ -26,6 +24,9 @@ public class Ability {
 		else if (state == IconState.Cooldown) {
 			icon.sprite = abil.Cooldown;
 		}
+	}
+	public void SetHelperText(PlayerControllerScript player, string text) {
+		abil.transform.GetChild (GetIndex (player)).GetChild (0).GetChild (0).GetComponent<Text> ().text = text;
 	}
 	public int GetIndex(PlayerControllerScript player) {
 		for(int i = 0; i < player.Abilities.Length; i++) {
