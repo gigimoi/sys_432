@@ -34,6 +34,7 @@ public class ConnectScript : Photon.MonoBehaviour {
 			0
 		);
 		player.GetPhotonView ().RPC ("SetUsername", PhotonTargets.AllBuffered, username.GetComponent<Text> ().text);
+		player.GetPhotonView ().RPC ("SetCharClass", PhotonTargets.AllBuffered, GetComponent<CharacterClassManager>().SelectedClass);
 	}
 	void Update() {
 		if (PhotonNetwork.connectionState.ToString () != "Connected") {

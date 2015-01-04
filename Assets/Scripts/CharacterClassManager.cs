@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CharacterClassManager : MonoBehaviour {
 	public List<CharClassScript.CharClass> Classes;
 	public Transform UIPrefab;
+	public string SelectedClass;
 	void Start() {
 		Classes = new List<CharClassScript.CharClass> ();
 		Classes.Add(new BlutSauger());
@@ -40,5 +41,6 @@ public class CharacterClassManager : MonoBehaviour {
 		}
 		rootrect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, Classes.Count * 70 + 4);
 		GameObject.Find ("/UI/Canvas/MainMenuPanel/CharSelectPanel/Scrollbar").GetComponent<Scrollbar> ().value = 1;
+		SelectedClass = Classes [0].Name;
 	}
 }

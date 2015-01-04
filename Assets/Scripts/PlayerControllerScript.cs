@@ -26,7 +26,6 @@ public class PlayerControllerScript : Photon.MonoBehaviour {
 		}
 		transform.parent = GameObject.Find ("Game").transform.GetChild(2);
 		text = GameObject.Find ("/UI/Canvas/TopLeftPanel/TopLeftText").transform;
-		Abilities = new Hexer ().Abilities;
 	}
 	void Update () {
 		GetComponent<HealthScript>().OnDeath = OnDeath;
@@ -91,6 +90,16 @@ public class PlayerControllerScript : Photon.MonoBehaviour {
 	}
 	void OnDeath() {
 
+	}
+	[RPC] public void SetCharClass(string clazz) {
+		var classes = GameObject.Find ("/Game/").GetComponent<CharacterClassManager> ().Classes;
+		for (int i = 0; i < classes.Count; i++) {
+			if(classes[i].Name == clazz) {
+				Abilities = classes[i].Abilities;
+				print (Abilities[0].Title);
+				break;
+			}
+		}
 	}
 	[RPC] public void SetUsername(string username) {
 		Username = username;
