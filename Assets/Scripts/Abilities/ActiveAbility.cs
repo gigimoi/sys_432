@@ -6,7 +6,7 @@ public class ActiveAbility : Ability {
 	public float Cooldown;
 	public float CurrentCooldown;
 	protected OnCast onCast;
-	public ActiveAbility (float cooldown, OnCast onCast, string info) : base(info) {
+	public ActiveAbility (float cooldown, string title, OnCast onCast, string info) : base(info, title) {
 		Cooldown = cooldown;
 		CurrentCooldown = 0;
 		this.onCast = onCast;

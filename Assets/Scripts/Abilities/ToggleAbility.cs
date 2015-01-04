@@ -3,7 +3,7 @@ public class ToggleAbility : ActiveAbility {
 	public OnCast Enable;
 	public OnCast Disable;
 	bool enabled;
-	public ToggleAbility (OnCast onEnable, OnCast onDisable, string info) : base(0, onEnable, info) {
+	public ToggleAbility (OnCast onEnable, OnCast onDisable, string info, string title) : base(0, title, onEnable, info) {
 		Enable = onEnable;
 		Disable = onDisable;
 	}

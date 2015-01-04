@@ -7,8 +7,10 @@ public class Ability {
 	private AbilitiesScript abil;
 	private Transform aback;
 	public string Info;
-	public Ability(string info) {
+	public string Title;
+	public Ability(string info, string title) {
 		this.Info = info;
+		this.Title = title;
 		abil = GameObject.Find ("/UI/Canvas/Abilities").GetComponent<AbilitiesScript> ();
 		aback = GameObject.Find ("/UI/Canvas/AbilityInfoBack").transform;
 	}
