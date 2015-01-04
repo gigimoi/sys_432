@@ -26,6 +26,7 @@ public class ZombieAI : Photon.MonoBehaviour {
 	private GameObject collidingWith;
 	private int hitTimer = 0;
 	public void Update() {
+		GetComponent<HealthScript> ().OnTakeDamage = TakeDamage;
 		if (!noRot) {
 			transform.rotation = Quaternion.Euler (new Vector3 (0, 0, Mathf.Rad2Deg * Mathf.Atan2 (rigidbody2D.velocity.y, rigidbody2D.velocity.x)));
 		}
@@ -85,5 +86,11 @@ public class ZombieAI : Photon.MonoBehaviour {
 	}
 	void repath() {
 		seeker.StartPath(transform.position, playerTarget.position, OnPathComplete);
+	}
+
+	void TakeDamage (int amnt) {
+		for (int i = 0; i < amnt; i++) {
+			PhotonNetwork.Instantiate("Gib", transform.position, transform.rotation, 0);
+		}
 	}
 }

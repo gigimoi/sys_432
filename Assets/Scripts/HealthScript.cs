@@ -8,6 +8,7 @@ public class HealthScript : Photon.MonoBehaviour {
 	int Health;
 	public Sprite[] TexturesAtHealth;
 	public Action OnDeath;
+	public Action<int> OnTakeDamage;
 	void Start () {
 		Health = MaxHealth;
 		OnDeath = this.Die;
@@ -35,6 +36,9 @@ public class HealthScript : Photon.MonoBehaviour {
 	[RPC]public void TakeDamage (int i)
 	{
 		Health -= i;
+		if (OnTakeDamage != null) {
+			OnTakeDamage (i);
+		}
 		if (Health <= 0) {
 			Health = 0;
 			OnDeath();

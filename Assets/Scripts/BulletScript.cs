@@ -35,7 +35,6 @@ public class BulletScript : Photon.MonoBehaviour {
 							break;
 						}
 					}
-					PhotonNetwork.Instantiate("Gib", transform.position, transform.rotation, 0);
 				}
 			}
 		}
