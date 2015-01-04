@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class SoulRipScript : Photon.MonoBehaviour {
-	Transform player;
 	List<Transform> blacklist = new List<Transform>();
 	void Start () {
 		Invoke ("DestroySelf", 0.2f);
@@ -18,7 +17,7 @@ public class SoulRipScript : Photon.MonoBehaviour {
 			if (!blacklist.Contains(collider.transform) && collider.GetComponent<TeamScript> () != null) {
 				if(collider.GetComponent<TeamScript> ().Team == "Zombies") {
 					collider.GetComponent<HealthScript> ().photonView.RPC("TakeDamage", PhotonTargets.All, 2);
-					player.GetComponent<HealthScript>().photonView.RPC ("Heal", PhotonTargets.All, 1);
+					transform.parent.GetComponent<HealthScript>().photonView.RPC ("Heal", PhotonTargets.All, 1);
 					blacklist.Add (collider.transform);
 				}
 		   	}

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class StoneGazeScript : Photon.MonoBehaviour {
 	public static Buff buff = new Buff() {
 		moveSpeed = 0.85f,
-		time = 0.3f
+		time = 0.1f
 	};
 	List<Transform> inGaze = new List<Transform>();
 	void Update() {
@@ -19,7 +19,10 @@ public class StoneGazeScript : Photon.MonoBehaviour {
 		}
 	}
 	void OnTriggerEnter2D(Collider2D collider) {
-		if (collider.GetComponent<BuffListScript>() != null && collider.GetComponent<TeamScript>() != null && collider.GetComponent<TeamScript>().Team == "Zombies") {
+		if (collider.GetComponent<BuffListScript>() != null && 
+		    collider.GetComponent<TeamScript>() != null && 
+		    collider.GetComponent<TeamScript>().Team == "Zombies") 
+		{
 			inGaze.Add(collider.transform);
 		}
 	}
