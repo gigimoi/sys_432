@@ -93,12 +93,17 @@ public class PlayerControllerScript : Photon.MonoBehaviour {
 	}
 	[RPC] public void SetCharClass(string clazz) {
 		var classes = GameObject.Find ("/Game/").GetComponent<CharacterClassManager> ().Classes;
+		int classIndex = -1;
 		for (int i = 0; i < classes.Count; i++) {
 			if(classes[i].Name == clazz) {
 				Abilities = classes[i].Abilities;
-				print (Abilities[0].Title);
+				classIndex = i;
 				break;
 			}
+		}
+		var abil = GameObject.Find ("UI/Canvas/Abilities").transform;
+		for(int i = 0; i < abil.childCount; i++) {
+			abil.GetChild(i).GetComponent<Image>().sprite = classes[classIndex].AbilitySprites[i];
 		}
 	}
 	[RPC] public void SetUsername(string username) {

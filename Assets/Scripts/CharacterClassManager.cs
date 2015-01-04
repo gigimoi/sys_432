@@ -34,6 +34,7 @@ public class CharacterClassManager : MonoBehaviour {
 			}
 			for(int j = 0; j < 4; j++) {
 				ui.GetChild(j).GetComponent<Image>().sprite = script.Abilities[j];
+				Classes[i].AbilitySprites[j] = script.Abilities[j];
 			}
 			ui.GetChild(4).GetComponent<Text>().text = script.name;
 			ui.gameObject.AddComponent (typeof(CharClassScript));
