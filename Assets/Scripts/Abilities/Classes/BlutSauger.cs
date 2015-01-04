@@ -2,7 +2,8 @@ using System;
 using UnityEngine;
 
 public class BlutSauger : CharClassScript.CharClass {
-	public BlutSauger() {;
+	public BlutSauger() {
+		this.Name = "Blut Sauger";
 		Abilities [0] = new ActiveAbility (3, "Soul Rip", SoulRip, "Deal 2 damage in a cone in front of you, stealing it to yourself");
 		Abilities [1] = new ActiveAbility (3, "Blut Sauge", BlutSauge, "Deal 2 damage in an area around you, stealing it to nearby players");
 		Abilities [2] = new ActiveAbility (7, "Cleave", BlutCleave, "Deal 3 damage in a 90 arc in front of you, slowing enemies by 15% for 3 seconds");

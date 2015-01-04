@@ -26,7 +26,7 @@ public class PlayerControllerScript : Photon.MonoBehaviour {
 		}
 		transform.parent = GameObject.Find ("Game").transform.GetChild(2);
 		text = GameObject.Find ("/UI/Canvas/TopLeftPanel/TopLeftText").transform;
-		Abilities = new BlutSauger ().Abilities;
+		Abilities = new Hexer ().Abilities;
 	}
 	void Update () {
 		GetComponent<HealthScript>().OnDeath = OnDeath;
