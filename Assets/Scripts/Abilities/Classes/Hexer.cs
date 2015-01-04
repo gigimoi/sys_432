@@ -4,8 +4,9 @@ using UnityEngine;
 public class Hexer : CharClassScript.CharClass {
 	public Hexer () {
 		this.Name = "Hexer";
-		Abilities [0] = new PassiveAbility("Stone Gaze", "Slows all enemies in a 60 degree arc in front of you by 15%", StoneGaze);
-		Abilities [1] = new ActiveAbility (1, "Blink", Blink, "Teleport the player forward 3 meters");
+		Abilities [0] = new PassiveAbility("Stone Gaze", "Passively slows all enemies in a 60 degree arc in front of you by 15%", StoneGaze);
+		Abilities [1] = new ActiveAbility (14, "Blink", Blink, "Teleport forward 3 meters");
+		Abilities [2] = new ActiveAbility (12, "Eye Shield", EyeShield, "Block all damage taken from the front for 2 seconds");
 	}
 	bool hasCreatedStoneGazeObject = false;
 	void StoneGaze (PlayerControllerScript player) {
@@ -16,6 +17,7 @@ public class Hexer : CharClassScript.CharClass {
 		}
 	}
 	void Blink(PlayerControllerScript player) {
+		PhotonNetwork.Instantiate ("Hexer Blink Particle", player.transform.position, Quaternion.Euler (0, 0, 0), 0);
 		var oldLayer = player.gameObject.layer;
 		player.gameObject.layer = LayerMask.NameToLayer ("Ignore Raycast");
 		float angle = player.transform.localEulerAngles.z + 90;
@@ -31,5 +33,7 @@ public class Hexer : CharClassScript.CharClass {
 		} else {
 			player.transform.Translate(vec * 3, Space.World); 
 		}
+	}
+	void EyeShield (PlayerControllerScript player) {
 	}
 }
