@@ -11,6 +11,7 @@ public class CharacterClassManager : MonoBehaviour {
 		Classes = new List<CharClassScript.CharClass> ();
 		Classes.Add(new BlutSauger());
 		Classes.Add(new Hexer());
+		Classes.Add(new Dreiad());
 		var classInfos = GameObject.Find ("/Game/Classes").GetComponentsInChildren<CharClassScript> ();
 		var root = GameObject.Find("/UI/Canvas/MainMenuPanel/CharSelectPanel/CharSelectArea");
 		var rootrect = root.GetComponent<RectTransform>();
