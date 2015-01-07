@@ -6,9 +6,11 @@ public class Hexer : CharClassScript.CharClass {
 		this.Name = "Hexer";
 		Abilities [0] = new PassiveAbility("Stone Gaze", "Passively slows all enemies in a 60 degree arc in front of you by 15%", StoneGaze);
 		Abilities [1] = new ActiveAbility (14, "Blink", Blink, "Teleport forward 3 meters");
-		Abilities [2] = new ActiveAbility (12, "Eye Shield", EyeShield, "Block all damage taken from the front for 2 seconds");
+		Abilities [2] = new ActiveAbility (3, "Eye Shield", EyeShield, "Drop a shield in front of you for 2 seconds, absorbs up to 30 damage");
+		Abilities [3] = new PassiveAbility ("Eye of Ignition", "25% chance per second to ignite each enemies in a 45 degree arc in front of you", EyeIgnition);
 	}
 	bool hasCreatedStoneGazeObject = false;
+	bool hasCreatedIgnitionObject = false;
 	void StoneGaze (PlayerControllerScript player) {
 		if (!hasCreatedStoneGazeObject) {
 			var gaze = PhotonNetwork.Instantiate("Hexer Stone Gaze", player.transform.position, player.transform.rotation, 0);
@@ -35,5 +37,19 @@ public class Hexer : CharClassScript.CharClass {
 		}
 	}
 	void EyeShield (PlayerControllerScript player) {
+		PhotonNetwork.Instantiate(
+			"Hexer Eye Shield",
+		    player.transform.position, 
+			player.transform.rotation,
+			0
+		);
+	}
+
+	void EyeIgnition (PlayerControllerScript player) {
+		if (!hasCreatedIgnitionObject) {
+			var gaze = PhotonNetwork.Instantiate("Hexer Ignition", player.transform.position, player.transform.rotation, 0);
+			gaze.GetPhotonView().RPC ("SetPlayer", PhotonTargets.AllBufferedViaServer, player.name);
+			hasCreatedIgnitionObject = true;
+		}
 	}
 }
