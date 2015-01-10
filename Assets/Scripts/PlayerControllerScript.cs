@@ -36,14 +36,14 @@ public class PlayerControllerScript : Photon.MonoBehaviour {
 				}
 			}
 			if(stamina < 1) {
-				stamina += 0.005f;
+				stamina += 0.25f * Time.deltaTime;
 				if(stamina > 1) {
 					stamina = 1;
 				}
 			}
 			if ((stamina > 0.25 || (sprinting && stamina > 0)) && Input.GetKey (KeyCode.LeftShift)) {
 				sprinting = true;
-				stamina -= 0.01f;
+				stamina -= 0.8f * Time.deltaTime;
 			} else {
 				sprinting = false;
 			}
@@ -66,7 +66,7 @@ public class PlayerControllerScript : Photon.MonoBehaviour {
 				velocity.x += Speed * (sprinting ? 1.7f : 1f);
 			}
 			velocity /= 4;
-			rigidbody2D.AddRelativeForce (velocity * 10000 * GetComponent<BuffListScript>().GetMoveSpeedMultiplier());
+			rigidbody2D.AddRelativeForce (velocity * 750000 * GetComponent<BuffListScript>().GetMoveSpeedMultiplier() * Time.deltaTime);
 			var cam = GetComponentInChildren<Camera> ();
 			transform.Rotate(0, 0, Input.GetAxis("Mouse X") * -11);
 			target.Translate(0, Input.GetAxis("Mouse Y") * 0.32f, 0);
@@ -102,8 +102,8 @@ public class PlayerControllerScript : Photon.MonoBehaviour {
 			}
 		}
 		var abil = GameObject.Find ("UI/Canvas/Abilities").transform;
-		for(int i = 0; i < abil.childCount; i++) {
-			abil.GetChild(i).GetComponent<Image>().sprite = classes[classIndex].AbilitySprites[i];
+		for(int i = 0; i < abil.childCount / 2; i++) {
+			abil.GetChild(i * 2).GetComponent<Image>().sprite = classes[classIndex].AbilitySprites[i];
 		}
 	}
 	[RPC] public void SetUsername(string username) {

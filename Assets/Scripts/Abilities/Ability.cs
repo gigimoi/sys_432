@@ -16,15 +16,15 @@ public class Ability {
 	}
 	public virtual void Update (PlayerControllerScript player) {
 		if(Input.GetKey(KeyCode.Tab)) {
-			abil.transform.GetChild(GetIndex(player)).GetChild (2).GetComponent<Text>().text = Info;
+			abil.transform.GetChild(GetIndex(player) * 2 + 1).GetComponent<Text>().text = Info;
 			aback.GetComponent<Image>().enabled = true;
 		} else {
-			abil.transform.GetChild(GetIndex(player)).GetChild (2).GetComponent<Text>().text = "";
+			abil.transform.GetChild(GetIndex(player) * 2 + 1).GetComponent<Text>().text = "";
 			aback.GetComponent<Image>().enabled = false;
 		}
 	}
 	public void SetIconState(PlayerControllerScript player, IconState state) {
-		var icon = abil.transform.GetChild (GetIndex (player)).GetChild(0).GetComponent<Image>();
+		var icon = abil.transform.GetChild (GetIndex (player) * 2).GetChild(0).GetComponent<Image>();
 		if (state == IconState.None) {
 			icon.sprite = abil.NoHighlight;
 		}
@@ -39,7 +39,7 @@ public class Ability {
 		}
 	}
 	public void SetHelperText(PlayerControllerScript player, string text) {
-		abil.transform.GetChild (GetIndex (player)).GetChild (0).GetChild (0).GetComponent<Text> ().text = text;
+		abil.transform.GetChild (GetIndex (player) * 2).GetChild (0).GetChild (0).GetComponent<Text> ().text = text;
 	}
 	public int GetIndex(PlayerControllerScript player) {
 		for(int i = 0; i < player.Abilities.Length; i++) {

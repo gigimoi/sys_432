@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class GunControllerScript : Photon.MonoBehaviour {
 	bool gunInWall = false;
-	int ticker = 0;
+	float ticker = 0;
 
 	public int MaxAmmo;
 	public int MaxClip;
@@ -22,17 +22,17 @@ public class GunControllerScript : Photon.MonoBehaviour {
 	}
 	void Update () {
 		if (transform.parent.GetComponent<PlayerControllerScript> ().photonView.isMine) {
-			if(!reloading && clip > 0 && !gunInWall && Input.GetMouseButton(0) && ticker == 0) {
+			if(!reloading && clip > 0 && !gunInWall && Input.GetMouseButton(0) && ticker <= 0) {
 				var bullet = PhotonNetwork.Instantiate("Simple Bullet", transform.GetChild(0).position, transform.GetChild(0).rotation, 0);
 				bullet.GetPhotonView().RPC ("SetPlayer", PhotonTargets.AllBuffered, player.Username);
 				clip--;
 				if(clip == 0 && ammo > 0) {
 					photonView.RPC ("Reload", PhotonTargets.All, true);
 				}
-				ticker = 10;
+				ticker = 0.2f;
 			}
 			if (ticker > 0) {
-				ticker--;
+				ticker -= Time.deltaTime;
 			}
 			if(!reloading && Input.GetKeyDown(KeyCode.R) && ammo > 0 && clip != MaxClip) {
 				photonView.RPC ("Reload", PhotonTargets.All, true);
