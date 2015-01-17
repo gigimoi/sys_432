@@ -25,10 +25,17 @@
     <object id="0" x="0" y="0" width="32" height="32"/>
    </objectgroup>
   </tile>
+  <tile id="10">
+   <objectgroup draworder="index">
+    <object id="0" x="15.375" y="6.75">
+     <polygon points="0,0 -3.25,0.25 -5.375,1.125 -8.375,4.25 -9.5,6.25 -9.375,12.875 -8.375,15.125 -5.5,17.75 -3.5,18.875 3.125,19 5.125,18 8.25,15.25 9.375,13 9.625,6.625 8.25,4.5 5.625,1.375 3.5,0.375"/>
+    </object>
+   </objectgroup>
+  </tile>
  </tileset>
  <layer name="Tile Layer 1" width="100" height="100">
   <data encoding="base64" compression="zlib">
-   eJzt18EKgkAQgGENL/b+D9xFQURttNoZ4zt8EEuHdn+G3Yau6wYAAAAAAAAAAAAAAAAAAAAAAEjQT56Lz31g/ars/VY3n/lSv7G+9b0rrbL3W50eteyd89a56/F7kRbvOunxPUfzsb7T9WjTI/qm0qMOPWo56nGmT/Y+7ugxifQ4OzPZe7ubucW4ahKdj3dNsvd3N1d6RN5oenzeZLkWmQM92om8iSP3SvY+/tU8P3v3hB5tW+hRR6SH91W7Fsu3lx75PbbeX+T1WP83Ia+F+ahh3UKPWi30yO8xdlpkMxt17LXQo1aP7N8FAAAAAAAAAAAAANTzAg36nLc=
+   eJzt18EKgkAUQFENN9X//28ECjKMOor5nnEWB0NaNHN5Og1d1w0AAAAAAAAAAAAAAAAAAAAAABCgH71mn/uG+0dFrze7ac/n+sr92veOtIpeb3Z65LK0z7V91+P3WlpsddLjPGvzUb7Tv9d3cdXj/B6tZyrzkYf5yGVtPvbMS/Q67ugxqvUo52PvMyx6bXcztXgWTVrnY6tJ9PruZqvH0vujdVai13dHa8+rtf3W4zotZ+KW/47R6/hX0/wsvSf0uLaFHnm09HC+uq7F/OylR3yP2vmLuB7lfxPiWpiPHMoWeuRqoUd8j2enRTSzkcdSCz1y9Yj+XQAAAAAAAAAAAABAPh9SWJy/
   </data>
  </layer>
 </map>
