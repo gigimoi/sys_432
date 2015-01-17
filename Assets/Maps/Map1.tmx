@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" nextobjectid="1">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" nextobjectid="2">
  <tileset firstgid="1" name="tileset" tilewidth="32" tileheight="32">
   <image source="../Textures/tileset.png" width="224" height="640"/>
   <tile id="0">
@@ -33,9 +33,45 @@
    </objectgroup>
   </tile>
  </tileset>
+ <tileset firstgid="141" name="objects" tilewidth="32" tileheight="32">
+  <image source="../Textures/objects.png" width="224" height="640"/>
+  <tile id="0">
+   <objectgroup draworder="index">
+    <object id="0" x="13.125" y="4">
+     <polygon points="0,0 -4,1.75 -7,5 -9.125,9.125 -9.25,15.75 -7.125,19.875 -4.125,22.625 -0.125,25 6.75,25.125 10.875,22.75 13.875,20 14.75,18.125 15.875,16 15.75,9 13.75,5.375 10.75,2.125 8.625,0.875 6.625,-0.125"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="1">
+   <objectgroup draworder="index">
+    <object id="0" x="1.90909" y="14">
+     <polygon points="0,0 -1,1 -1,3.90909 -0.0909091,4.81818 30,4.90909 30,-0.181818"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="2">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="14">
+     <polygon points="0,0 32.1818,0 32.5455,5.09091 -0.181818,5.27273"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="3">
+   <objectgroup draworder="index">
+    <object id="0" x="-0.545455" y="14">
+     <polygon points="0,0 30,0 32,1.27273 31.8182,3.63636 30,5.27273 0.181818,5.27273"/>
+    </object>
+   </objectgroup>
+  </tile>
+ </tileset>
  <layer name="Tile Layer 1" width="100" height="100">
   <data encoding="base64" compression="zlib">
    eJzt18EKgkAUQFENN9X//28ECjKMOor5nnEWB0NaNHN5Og1d1w0AAAAAAAAAAAAAAAAAAAAAABCgH71mn/uG+0dFrze7ac/n+sr92veOtIpeb3Z65LK0z7V91+P3WlpsddLjPGvzUb7Tv9d3cdXj/B6tZyrzkYf5yGVtPvbMS/Q67ugxqvUo52PvMyx6bXcztXgWTVrnY6tJ9PruZqvH0vujdVai13dHa8+rtf3W4zotZ+KW/47R6/hX0/wsvSf0uLaFHnm09HC+uq7F/OylR3yP2vmLuB7lfxPiWpiPHMoWeuRqoUd8j2enRTSzkcdSCz1y9Yj+XQAAAAAAAAAAAABAPh9SWJy/
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt10EKwCAMBED/D7V9st7Vg60ltcxA7sEkLKYEAAAAAAAAAAAAAAAAAADAE0d0AzRyrbNTV2RTTHFX94323x28z94CAADAN/ij78ncABiZyQh5AgD/IddjePf9mSEAAAAAAAAAAAAAAADAWgVb3w5z
   </data>
  </layer>
 </map>

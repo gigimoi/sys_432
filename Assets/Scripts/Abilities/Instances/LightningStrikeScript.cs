@@ -17,18 +17,18 @@ public class LightningStrikeScript : MonoBehaviour {
 		}
 		transform.Rotate (0, 0, rotation);
 		var index = 0;
-		for (int i = 0; i < Random.Range(5, 7); i++) {
+		for (int i = 0; i < Random.Range(4, 5); i++) {
 			var particle = (Transform)Instantiate(particleSys);
 			particle.parent = transform;
 			particle.localPosition = transform.position;
-			transform.Translate(0, 0.35f, 0, Space.Self);
+			transform.Translate(0, 0.45f, 0, Space.Self);
 			particle.particleSystem.startSize += Random.Range(-0.5f, 1f);
 			if(Random.Range(0, chance) == 0) {
 				Branch (chance * 2, rotation + Random.Range(-35f, 35f));
 			}
 			index++;
 		}
-		transform.Translate (0, -0.35f * index, 0);
+		transform.Translate (0, -0.45f * index, 0);
 		transform.Rotate (0, 0, -rotation);
 	}
 	void Update () {
