@@ -2,13 +2,21 @@
 using System.Collections;
 
 public class DestroyAfter : Photon.MonoBehaviour {
-	public int Time;
+	public float Time;
+	bool photonDestroy = false;
 	void Start () {
-		if (photonView.isMine) {
+		if (photonView == null) {
 			Invoke ("DestroySelf", Time);
+		} else if (photonView.isMine) {
+			Invoke ("DestroySelf", Time);
+			photonDestroy = true;
 		}
 	}
 	void DestroySelf () {
-		PhotonNetwork.Destroy (gameObject);
+		if (photonDestroy) {
+			PhotonNetwork.Destroy (gameObject);
+		} else {
+			Destroy (gameObject);
+		}
 	}
 }
